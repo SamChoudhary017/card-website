@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('1.jpg'); /* Gradient overlay */
+            background-size: cover; /* Cover the entire page */
+            background-position: center; /* Center the background image */
+            background-repeat: no-repeat; /* Prevent repeating the image */
+            background-attachment: fixed; /* Keep the background fixed during scroll */
+        }
+        header {
+            width: 100%;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+        header img {
+            width: 80px; /* Adjust width as needed */
+            height: auto; /* Maintain aspect ratio */
+            margin-right: 20px;
+            /* Remove border and border-radius */
+            border: none; /* No border */
+            border-radius: 0; /* No border radius */
+            object-fit: contain; /* Ensure the image fits well within the space */
+            display: block; /* Ensure it aligns properly */
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2em;
+            text-transform: uppercase;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 100px 20px 20px 20px; /* Adjust padding for fixed header */
+            max-width: 1200px;
+            background-color: rgba(255, 255, 255, 0.9); /* Slightly increase opacity for better readability */
+            border-radius: 10px;
+            backdrop-filter: blur(5px); /* Blur effect on the container background */
+        }
+        .card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+        .card:hover img {
+            transform: translateY(-100%);
+        }
+        .card-body {
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            height: 200px; /* Match the height of the image for a smooth transition */
+            background-color: rgba(255, 255, 255, 0.9); /* Background for the card content */
+        }
+        .card-title {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: #333;
+            transition: opacity 0.5s ease, transform 0.5s ease;
+            opacity: 1; /* Always visible */
+        }
+        .card-text {
+            font-size: 1em;
+            color: #666;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+        .card:hover .card-text {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        @media (max-width: 768px) {
+            .card img {
+                height: 150px;
+            }
+            .card-body {
+                height: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logo_00-removebg-preview.jpg" alt="Website Logo">
+        <h1>Supercars Collection</h1>
+    </header>
+
+    <div class="container">
+        <div class="card">
+            <img src="porshe 911.jpg" alt="Porsche 911">
+            <div class="card-body">
+                <h3 class="card-title">Porsche 911</h3>
+                <p class="card-text">The iconic Porsche 911 delivers unmatched driving dynamics, performance, and heritage in a sleek, timeless package.</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="porsche taycan.jpg" alt="Porsche Taycan">
+            <div class="card-body">
+                <h3 class="card-title">Porsche Taycan</h3>
+                <p class="card-text">Experience the future with the all-electric Porsche Taycan, combining exhilarating performance with cutting-edge technology.</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="porsche panamera.jpg" alt="Porsche Panamera">
+            <div class="card-body">
+                <h3 class="card-title">Porsche Panamera</h3>
+                <p class="card-text">Luxury meets power in the Porsche Panamera, offering refined comfort with sports car performance.</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="sf90 ferrari.webp" alt="Ferrari SF90">
+            <div class="card-body">
+                <h3 class="card-title">Ferrari SF90</h3>
+                <p class="card-text">Ferrari's SF90 Stradale is a masterpiece of engineering, delivering hybrid performance with pure Ferrari DNA.</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="ferrari california t.jpg" alt="Ferrari California T">
+            <div class="card-body">
+                <h3 class="card-title">Ferrari California T</h3>
+                <p class="card-text">The Ferrari California T embodies elegance and excitement, offering a perfect blend of luxury and performance.</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="Ferrari Portofino M.jpg" alt="Ferrari Portofino M">
+            <div class="card-body">
+                <h3 class="card-title">Ferrari Portofino M</h3>
+                <p class="card-text">The Ferrari Portofino M delivers open-top thrills with a perfect balance of style, comfort, and exhilarating power.</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="bugatti veyron.jpg" alt="Bugatti Veyron">
+            <div class="card-body">
+                <h3 class="card-title">Bugatti Veyron</h3>
+                <p class="card-text">The Bugatti Veyron redefines speed and luxury, standing as a symbol of ultimate automotive excellence.</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="bugatti divo.jpg" alt="Bugatti Divo">
+            <div class="card-body">
+                <h3 class="card-title">Bugatti Divo</h3>
+                <p class="card-text">Designed for agility, the Bugatti Divo is a masterpiece that combines stunning aesthetics with extreme performance.</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="bugatti chiron .jpg" alt="Bugatti Chiron">
+            <div class="card-body">
+                <h3 class="card-title">Bugatti Chiron</h3>
+                <p class="card-text">The Bugatti Chiron offers unmatched power and luxury, pushing the limits of automotive engineering.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
